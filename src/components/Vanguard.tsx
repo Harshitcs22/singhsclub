@@ -14,7 +14,7 @@ export default function Vanguard() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(0)
 
   return (
-    <section className="relative w-full pt-32 pb-48 bg-[var(--color-onyx)] overflow-hidden">
+    <section id="legacy" className="relative w-full pt-32 pb-48 bg-[var(--color-onyx)] overflow-hidden">
       {/* Background Hover Images */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <AnimatePresence>

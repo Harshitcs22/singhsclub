@@ -54,7 +54,13 @@ export default function Footer() {
 
           {/* RIGHT SIDE: Links */}
           <div className="flex flex-col gap-2 md:text-right pt-2 md:pt-0">
-            <a href="#" className="font-sans text-[var(--color-silver-dim)] hover:text-[var(--color-chrome)] text-xs uppercase tracking-widest transition-colors">Operations</a>
+            <a 
+              href="#legacy" 
+              onClick={(e) => { e.preventDefault(); document.getElementById('legacy')?.scrollIntoView({ behavior: 'smooth' }) }}
+              className="font-sans text-[var(--color-silver-dim)] hover:text-[var(--color-chrome)] text-xs uppercase tracking-widest transition-colors cursor-pointer"
+            >
+              Operations
+            </a>
             <a href="#" className="font-sans text-[var(--color-silver-dim)] hover:text-[var(--color-chrome)] text-xs uppercase tracking-widest transition-colors">Legal</a>
             <a href="tel:+919463449242" className="font-sans text-[var(--color-silver-dim)] hover:text-[var(--color-chrome)] text-xs uppercase tracking-widest transition-colors">Contact</a>
           </div>
