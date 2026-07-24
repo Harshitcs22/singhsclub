@@ -13,7 +13,7 @@ const products = [
     backImage: "/images/jersey_back_dark.png"
   },
   {
-    name: "Elite Track Spikes",
+    name: "Elite Running Shoes",
     description: "Matte Black & Neon Chassis. Zombie 'S' Signature Graphic.",
     frontImage: "/images/shoes_dark.png",
     backImage: null
