@@ -9,7 +9,7 @@ interface EnlistModalProps {
 }
 
 // ⚠️ REPLACE WITH COACH'S ACTUAL WHATSAPP NUMBER (with country code, no + sign)
-const WHATSAPP_NUMBER = '916283849492'
+const WHATSAPP_NUMBER = '919463449242'
 
 export default function EnlistModal({ isOpen, onClose }: EnlistModalProps) {
   const [form, setForm] = useState({
