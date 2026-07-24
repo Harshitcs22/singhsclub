@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bodoni_Moda, Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
+import ChatWidget from "@/components/ChatWidget";
 
 const playfair = Bodoni_Moda({
   variable: "--font-playfair",
@@ -14,11 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Singhs Athletics Club | Stealth Elite",
-  description: "Singhs Athletics Club, Sri Anandpur Sahib. Building champions and warriors.",
-  verification: {
-    google: "GOXA06Da8PntyAPIIHc9aSqQQVNpZs-qOj_BAaxNjxk",
-  },
+  title: "Singhs Club | The Arsenal",
+  description: "Official athletic training grounds and pro-shop of Sri Anandpur Sahib.",
 };
 
 export default function RootLayout({
@@ -27,14 +25,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${inter.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-[var(--color-onyx)] text-[var(--color-silver)] font-sans">
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <meta name="google-site-verification" content="googleac8d69888d4e1625.html" />
+        <meta name="google-site-verification" content="GOXA06Da8PntyAPIIHc9aSqQQVNpZs-qOj_BAaxNjxk" />
+        
+        {/* =========================================================================
+            3RD PARTY CHAT SCRIPT INJECTION POINT
+            Paste your script tags (e.g. Botpress, Chatbase, etc.) directly below.
+            Example: <script src="https://cdn.botpress.cloud/webchat/v1/inject.js" async />
+            ========================================================================= */}
+      </head>
+      <body className="font-sans antialiased bg-black text-white selection:bg-[var(--color-chrome)] selection:text-black min-h-screen flex flex-col">
         <LenisProvider>
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
         </LenisProvider>
+
+        {/* Custom Luxury AI Chat UI Wrapper */}
+        <ChatWidget />
       </body>
     </html>
   );
