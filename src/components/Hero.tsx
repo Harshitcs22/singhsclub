@@ -62,7 +62,18 @@ export default function Hero() {
           animate="visible"
           className="max-w-4xl flex flex-col items-center"
         >
-          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-[var(--color-silver)] leading-none tracking-tight mb-6 drop-shadow-2xl overflow-hidden flex flex-wrap justify-center">
+          {/* Logo Overlay */}
+          <motion.div variants={fadeVariants} className="mb-6 relative w-32 h-32 md:w-48 md:h-48 mix-blend-lighten opacity-90 drop-shadow-[0_0_20px_rgba(192,192,192,0.3)]">
+            <Image 
+              src="/images/logo_silver_4k.png"
+              alt="Singhs Club Crest"
+              fill
+              className="object-contain"
+              priority
+            />
+          </motion.div>
+
+          <h1 className="font-serif text-6xl md:text-8xl lg:text-8xl text-[var(--color-silver)] leading-none tracking-tight mb-6 drop-shadow-2xl overflow-hidden flex flex-wrap justify-center">
             {"SINGH'S CLUB".split("").map((char, index) => (
               <motion.span
                 key={index}
