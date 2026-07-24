@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
@@ -22,6 +22,7 @@ export default function Colosseum() {
     minutes: '00',
     seconds: '00'
   })
+  const [showInfo, setShowInfo] = useState(false)
 
   useEffect(() => {
     // Arbitrary future date for countdown
@@ -82,6 +83,44 @@ export default function Colosseum() {
             </div>
           </div>
         </motion.div>
+
+        {/* INFO Button */}
+        <div className="relative mt-10 flex flex-col items-center">
+          <button
+            onClick={() => setShowInfo(prev => !prev)}
+            onMouseEnter={() => setShowInfo(true)}
+            onMouseLeave={() => setShowInfo(false)}
+            className="w-9 h-9 rounded-full border border-[var(--color-silver-dim)]/40 flex items-center justify-center text-[var(--color-silver-dim)] hover:border-[var(--color-chrome)] hover:text-white hover:shadow-[0_0_15px_rgba(192,192,192,0.25)] transition-all duration-500 cursor-pointer"
+            aria-label="Tournament Information"
+          >
+            <span className="font-serif italic text-sm leading-none select-none">i</span>
+          </button>
+
+          {/* Tooltip */}
+          <AnimatePresence>
+            {showInfo && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute top-14 w-80 md:w-96 bg-[#0c0c0c] border border-[var(--color-silver-dim)]/20 p-6 z-50 backdrop-blur-sm shadow-2xl"
+                onMouseEnter={() => setShowInfo(true)}
+                onMouseLeave={() => setShowInfo(false)}
+              >
+                {/* Subtle top notch */}
+                <div className="absolute -top-px left-1/2 -translate-x-1/2 w-8 h-px bg-gradient-to-r from-transparent via-[var(--color-chrome)] to-transparent" />
+                
+                <h4 className="font-sans text-[var(--color-silver)] uppercase tracking-[0.25em] text-[11px] font-semibold mb-3">
+                  An Annual Proving Ground.
+                </h4>
+                <p className="font-sans text-[var(--color-silver-dim)] text-xs md:text-[13px] leading-[1.5] tracking-wide">
+                  Every year, Singhs Club hosts elite athletic tournaments across all categories and events. Top athletes from all over India converge here to compete. Official dates, rosters, and registration details for the upcoming meet will be updated soon.
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Marquee */}
