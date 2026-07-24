@@ -16,6 +16,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Singhs Athletics Club | Stealth Elite",
   description: "Singhs Athletics Club, Sri Anandpur Sahib. Building champions and warriors.",
+  verification: {
+    google: "GOXA06Da8PntyAPIIHc9aSqQQVNpZs-qOj_BAaxNjxk",
+  },
 };
 
 export default function RootLayout({
