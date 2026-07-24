@@ -73,7 +73,7 @@ export default function Hero() {
             />
           </motion.div>
 
-          <h1 className="font-serif text-6xl md:text-8xl lg:text-8xl text-[var(--color-silver)] leading-none tracking-tight mb-6 drop-shadow-2xl overflow-hidden flex flex-wrap justify-center">
+          <h1 className="font-serif text-[12vw] md:text-8xl lg:text-[9rem] text-[var(--color-silver)] leading-none tracking-tight mb-6 drop-shadow-2xl overflow-hidden flex justify-center whitespace-nowrap w-full">
             {"SINGH'S CLUB".split("").map((char, index) => (
               <motion.span
                 key={index}
