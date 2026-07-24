@@ -14,8 +14,8 @@ const products = [
   },
   {
     name: "Elite Running Shoes",
-    description: "Matte Black & Neon Chassis. Zombie 'S' Signature Graphic.",
-    frontImage: "/images/shoes_dark.png",
+    description: "Stealth Grey / Carbon Black. Engineered for max velocity.",
+    frontImage: "/images/shoes_final.png",
     backImage: null
   }
 ]
