@@ -2,8 +2,11 @@
 
 import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
+import { useState } from 'react'
+import EnlistModal from './EnlistModal'
 
 export default function Hero() {
+  const [isEnlistOpen, setIsEnlistOpen] = useState(false)
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -76,18 +79,21 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={fadeVariants} className="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-md sm:max-w-none">
-            <button className="group relative px-10 py-4 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-sm overflow-hidden border border-[var(--color-silver-dim)] transition-all duration-500 hover:border-[var(--color-chrome)] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] hover:text-white">
+            <button onClick={() => setIsEnlistOpen(true)} className="group relative px-10 py-4 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-sm overflow-hidden border border-[var(--color-silver-dim)] transition-all duration-500 hover:border-[var(--color-chrome)] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] hover:text-white cursor-pointer">
               <span className="relative z-10">Enlist Now</span>
               <div className="absolute inset-0 bg-white/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
             </button>
 
             <button className="group relative px-10 py-4 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-sm overflow-hidden border border-[var(--color-silver-dim)] transition-all duration-500 hover:border-[var(--color-chrome)] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] hover:text-white">
-              <span className="relative z-10">The Arsenal</span>
+              <span className="relative z-10">Shop Now </span>
               <div className="absolute inset-0 bg-white/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
             </button>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Enlist Modal */}
+      <EnlistModal isOpen={isEnlistOpen} onClose={() => setIsEnlistOpen(false)} />
     </section>
   )
 }
