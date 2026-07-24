@@ -60,7 +60,7 @@ export default function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl flex flex-col items-center"
+          className="w-full flex flex-col items-center"
         >
           {/* Logo Overlay */}
           <motion.div variants={fadeVariants} className="mb-6 relative w-32 h-32 md:w-48 md:h-40 opacity-90 drop-shadow-[0_0_20px_rgba(192,192,192,0.3)]">
@@ -73,7 +73,7 @@ export default function Hero() {
             />
           </motion.div>
 
-          <h1 className="font-serif text-[12vw] md:text-8xl lg:text-[9rem] text-[var(--color-silver)] leading-none tracking-tight mb-6 drop-shadow-2xl overflow-hidden flex justify-center whitespace-nowrap w-full">
+          <h1 className="font-serif text-[clamp(2.5rem,10vw,9rem)] text-[var(--color-silver)] leading-none tracking-tight mb-6 drop-shadow-2xl overflow-hidden flex justify-center whitespace-nowrap w-full py-4">
             {"SINGH'S CLUB".split("").map((char, index) => (
               <motion.span
                 key={index}
