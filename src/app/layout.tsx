@@ -35,7 +35,20 @@ export default function RootLayout({
             __html: `
               window.chatbaseConfig = {
                 chatbotId: "VSHSGQD36p_xRu1jRoGzf",
+                displayMessage: "Hi, I am Singhs Club AI agent. How can I assist you today?",
+                theme: {
+                  chatWindow: {
+                    welcomeMessage: "Hi, I am Singhs Club AI agent. How can I assist you today?"
+                  }
+                }
               };
+              
+              // Dynamically set the profile picture once window is loaded to ensure we have the correct origin
+              if (typeof window !== 'undefined') {
+                window.chatbaseConfig.theme.chatWindow.botMessage = {
+                  profilePicture: window.location.origin + "/images/logo_silver_4k-removebg-preview.png"
+                };
+              }
             `
           }}
         />
