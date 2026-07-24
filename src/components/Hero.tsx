@@ -84,7 +84,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-white/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
             </button>
 
-            <button className="group relative px-10 py-4 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-sm overflow-hidden border border-[var(--color-silver-dim)] transition-all duration-500 hover:border-[var(--color-chrome)] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] hover:text-white">
+            <button onClick={() => document.getElementById('arsenal')?.scrollIntoView({ behavior: 'smooth' })} className="group relative px-10 py-4 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-sm overflow-hidden border border-[var(--color-silver-dim)] transition-all duration-500 hover:border-[var(--color-chrome)] hover:shadow-[0_0_20px_rgba(192,192,192,0.3)] hover:text-white cursor-pointer">
               <span className="relative z-10">Shop Now </span>
               <div className="absolute inset-0 bg-white/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
             </button>

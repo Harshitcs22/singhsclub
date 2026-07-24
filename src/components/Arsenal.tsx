@@ -103,7 +103,7 @@ function TiltCard({ frontImage, backImage }: { frontImage: string | null, backIm
 
 export default function Arsenal() {
   return (
-    <section className="relative w-full py-32 bg-[var(--color-onyx)]">
+    <section id="arsenal" className="relative w-full py-32 bg-[var(--color-onyx)]">
       <div className="container mx-auto px-6 md:px-12 flex flex-col gap-24">
         {/* Header Section */}
         <motion.div
