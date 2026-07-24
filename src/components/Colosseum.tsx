@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 
 const actionShots = [
@@ -16,40 +16,12 @@ const actionShots = [
 ]
 
 export default function Colosseum() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: '00',
-    hours: '00',
-    minutes: '00',
-    seconds: '00'
-  })
   const [showInfo, setShowInfo] = useState(false)
-
-  useEffect(() => {
-    // Arbitrary future date for countdown
-    const targetDate = new Date()
-    targetDate.setDate(targetDate.getDate() + 45)
-
-    const interval = setInterval(() => {
-      const now = new Date()
-      const difference = targetDate.getTime() - now.getTime()
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)).toString().padStart(2, '0'),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24).toString().padStart(2, '0'),
-          minutes: Math.floor((difference / 1000 / 60) % 60).toString().padStart(2, '0'),
-          seconds: Math.floor((difference / 1000) % 60).toString().padStart(2, '0')
-        })
-      }
-    }, 1000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   return (
     <section className="relative w-full py-32 bg-[#050505] overflow-hidden">
       
-      {/* Countdown Section */}
+      {/* Coming Soon Section */}
       <div className="container mx-auto px-6 md:px-12 mb-24 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,30 +30,12 @@ export default function Colosseum() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="font-serif text-[var(--color-silver)] text-2xl md:text-3xl tracking-wide mb-8">
+          <h2 className="font-serif text-[var(--color-silver)] text-2xl md:text-3xl tracking-wide mb-4">
             Next Annual Meet
           </h2>
-          <div className="flex gap-4 md:gap-8 font-sans font-light text-[var(--color-silver)] text-4xl md:text-6xl tracking-widest tabular-nums">
-            <div className="flex flex-col items-center">
-              <span>{timeLeft.days}</span>
-              <span className="text-[10px] md:text-xs text-[var(--color-silver-dim)] tracking-[0.2em] uppercase mt-2">Days</span>
-            </div>
-            <span className="opacity-50">:</span>
-            <div className="flex flex-col items-center">
-              <span>{timeLeft.hours}</span>
-              <span className="text-[10px] md:text-xs text-[var(--color-silver-dim)] tracking-[0.2em] uppercase mt-2">Hours</span>
-            </div>
-            <span className="opacity-50">:</span>
-            <div className="flex flex-col items-center">
-              <span>{timeLeft.minutes}</span>
-              <span className="text-[10px] md:text-xs text-[var(--color-silver-dim)] tracking-[0.2em] uppercase mt-2">Mins</span>
-            </div>
-            <span className="opacity-50">:</span>
-            <div className="flex flex-col items-center">
-              <span>{timeLeft.seconds}</span>
-              <span className="text-[10px] md:text-xs text-[var(--color-silver-dim)] tracking-[0.2em] uppercase mt-2">Secs</span>
-            </div>
-          </div>
+          <p className="font-sans text-[var(--color-silver-dim)] text-3xl md:text-5xl font-light tracking-[0.3em] uppercase">
+            Coming Soon
+          </p>
         </motion.div>
 
         {/* INFO Button */}
