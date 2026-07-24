@@ -63,7 +63,7 @@ export default function Hero() {
           className="max-w-4xl flex flex-col items-center"
         >
           {/* Logo Overlay */}
-          <motion.div variants={fadeVariants} className="mb-6 relative w-32 h-32 md:w-48 md:h-48 mix-blend-lighten opacity-90 drop-shadow-[0_0_20px_rgba(192,192,192,0.3)]">
+          <motion.div variants={fadeVariants} className="mb-6 relative w-32 h-32 md:w-48 md:h-48 mix-blend-screen opacity-90">
             <Image 
               src="/images/logo_silver_4k.png"
               alt="Singhs Club Crest"
