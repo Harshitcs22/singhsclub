@@ -9,7 +9,7 @@ const products = [
   {
     name: "The Official Stealth Jersey",
     description: "Base: Matte Black / Graphics: Liquid Silver Lion and Crest",
-    frontImage: "/images/stealth_jersey_new.png",
+    frontImage: "/images/stealth_jersey_final.png",
     backImage: null
   },
   {
