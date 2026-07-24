@@ -1,8 +1,9 @@
 'use client'
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
+import PurchaseModal from './PurchaseModal'
 
 const products = [
   {
@@ -102,6 +103,8 @@ function TiltCard({ frontImage, backImage }: { frontImage: string | null, backIm
 }
 
 export default function Arsenal() {
+  const [selectedProduct, setSelectedProduct] = useState<string | null>(null)
+
   return (
     <section id="arsenal" className="relative w-full py-32 bg-[var(--color-onyx)]">
       <div className="container mx-auto px-6 md:px-12 flex flex-col gap-24">
@@ -165,7 +168,10 @@ export default function Arsenal() {
                   {product.description}
                 </p>
                 
-                <button className="px-8 py-3 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-xs border border-[var(--color-silver-dim)] hover:border-[var(--color-chrome)] hover:bg-white hover:text-black transition-all duration-300">
+                <button 
+                  onClick={() => setSelectedProduct(product.name)}
+                  className="px-8 py-3 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-xs border border-[var(--color-silver-dim)] hover:border-[var(--color-chrome)] hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+                >
                   Acquire
                 </button>
               </motion.div>
@@ -173,6 +179,12 @@ export default function Arsenal() {
           ))}
         </div>
       </div>
+
+      <PurchaseModal 
+        isOpen={!!selectedProduct} 
+        onClose={() => setSelectedProduct(null)} 
+        productName={selectedProduct || ''} 
+      />
     </section>
   )
 }
