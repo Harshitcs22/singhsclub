@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Bodoni_Moda, Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 
-const playfair = Playfair_Display({
+const playfair = Bodoni_Moda({
   variable: "--font-playfair",
   subsets: ["latin"],
 });
