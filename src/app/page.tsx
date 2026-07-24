@@ -6,6 +6,7 @@ import Hero from '@/components/Hero'
 import Ethos from '@/components/Ethos'
 import Vanguard from '@/components/Vanguard'
 import Arsenal from '@/components/Arsenal'
+import CoachMessage from '@/components/CoachMessage'
 import Colosseum from '@/components/Colosseum'
 import Enlistment from '@/components/Enlistment'
 import Footer from '@/components/Footer'
@@ -21,6 +22,7 @@ export default function Home() {
       <Ethos />
       <Vanguard />
       <Arsenal />
+      <CoachMessage />
       <Colosseum />
       <Enlistment />
       <Footer />
