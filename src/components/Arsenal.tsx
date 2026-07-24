@@ -67,25 +67,25 @@ function TiltCard({ frontImage, backImage }: { frontImage: string | null, backIm
       }}
       className="relative w-full aspect-[4/5] max-w-sm mx-auto flex items-center justify-center cursor-crosshair group"
     >
-      <div 
+      <div
         style={{ transform: "translateZ(50px)" }}
         className="absolute inset-4 bg-transparent group-hover:bg-[var(--color-onyx-light)]/30 border border-[var(--color-silver-dim)]/10 group-hover:border-[var(--color-silver-dim)]/40 transition-all duration-700 rounded-sm flex items-center justify-center overflow-hidden"
       >
         {frontImage ? (
           <>
-            <Image 
-              src={frontImage} 
-              alt="Product Front" 
-              fill 
-              className={`object-contain p-4 transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-0 scale-100' : 'opacity-100 scale-105'}`} 
+            <Image
+              src={frontImage}
+              alt="Product Front"
+              fill
+              className={`object-contain p-4 transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-0 scale-100' : 'opacity-100 scale-105'}`}
               priority
             />
             {backImage && (
-              <Image 
-                src={backImage} 
-                alt="Product Back" 
-                fill 
-                className={`object-contain p-4 absolute inset-0 transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-100 scale-105' : 'opacity-0 scale-100'}`} 
+              <Image
+                src={backImage}
+                alt="Product Back"
+                fill
+                className={`object-contain p-4 absolute inset-0 transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-100 scale-105' : 'opacity-0 scale-100'}`}
                 priority
               />
             )}
@@ -153,26 +153,31 @@ export default function Arsenal() {
               >
                 <TiltCard frontImage={product.frontImage} backImage={product.backImage} />
               </motion.div>
-              
-              <motion.div 
-                className="text-center"
+
+              <motion.div
+                className="text-center flex flex-col items-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: 0.3 + (i * 0.2) }}
               >
+                <div className="inline-block mb-3 px-3 py-1 border border-white/20 bg-white/5">
+                  <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-pulse">
+                    Coming Soon
+                  </span>
+                </div>
                 <h3 className="font-serif text-[var(--color-silver)] text-xl md:text-2xl tracking-wider mb-2">
                   {product.name}
                 </h3>
                 <p className="font-sans text-[var(--color-silver-dim)] uppercase tracking-wider text-[10px] md:text-xs max-w-sm mx-auto mb-6 h-8">
                   {product.description}
                 </p>
-                
-                <button 
+
+                <button
                   onClick={() => setSelectedProduct(product.name)}
                   className="px-8 py-3 bg-transparent text-[var(--color-silver)] font-sans uppercase tracking-widest text-xs border border-[var(--color-silver-dim)] hover:border-[var(--color-chrome)] hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
                 >
-                  Acquire
+                  Acquire early access
                 </button>
               </motion.div>
             </div>
@@ -180,10 +185,10 @@ export default function Arsenal() {
         </div>
       </div>
 
-      <PurchaseModal 
-        isOpen={!!selectedProduct} 
-        onClose={() => setSelectedProduct(null)} 
-        productName={selectedProduct || ''} 
+      <PurchaseModal
+        isOpen={!!selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+        productName={selectedProduct || ''}
       />
     </section>
   )
