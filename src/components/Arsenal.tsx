@@ -77,7 +77,7 @@ function TiltCard({ frontImage, backImage }: { frontImage: string | null, backIm
               src={frontImage} 
               alt="Product Front" 
               fill 
-              className={`object-cover transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-0 scale-100' : 'opacity-100 scale-105'}`} 
+              className={`object-contain p-4 transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-0 scale-100' : 'opacity-100 scale-105'}`} 
               priority
             />
             {backImage && (
@@ -85,7 +85,7 @@ function TiltCard({ frontImage, backImage }: { frontImage: string | null, backIm
                 src={backImage} 
                 alt="Product Back" 
                 fill 
-                className={`object-cover absolute inset-0 transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-100 scale-105' : 'opacity-0 scale-100'}`} 
+                className={`object-contain p-4 absolute inset-0 transition-all duration-[3000ms] ease-in-out ${showBack ? 'opacity-100 scale-105' : 'opacity-0 scale-100'}`} 
                 priority
               />
             )}
