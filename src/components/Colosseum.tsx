@@ -19,10 +19,10 @@ export default function Colosseum() {
   const [showInfo, setShowInfo] = useState(false)
 
   return (
-    <section className="relative w-full py-32 bg-[#050505] overflow-hidden">
+    <section className="relative w-full py-48 bg-[#050505] overflow-hidden">
       
       {/* Coming Soon Section */}
-      <div className="container mx-auto px-6 md:px-12 mb-24 flex flex-col items-center">
+      <div className="container mx-auto px-6 md:px-12 mb-32 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,10 +30,10 @@ export default function Colosseum() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="font-serif text-[var(--color-silver)] text-2xl md:text-3xl tracking-wide mb-4">
+          <h2 className="font-serif text-[var(--color-silver)] text-2xl md:text-3xl tracking-wide mb-2">
             Next Annual Meet
           </h2>
-          <p className="font-sans text-[var(--color-silver-dim)] text-3xl md:text-5xl font-light tracking-[0.3em] uppercase">
+          <p className="font-sans text-[var(--color-silver-dim)] text-xl md:text-2xl font-light tracking-[0.3em] uppercase">
             Coming Soon
           </p>
         </motion.div>

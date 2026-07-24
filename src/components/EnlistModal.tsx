@@ -79,10 +79,10 @@ export default function EnlistModal({ isOpen, onClose }: EnlistModalProps) {
 
             {/* Heading */}
             <h2 className="font-serif text-[var(--color-silver)] text-3xl md:text-4xl tracking-wide mb-2">
-              Submit Your Dossier
+              Submit Your Discipline
             </h2>
             <p className="font-sans text-[var(--color-silver-dim)] uppercase tracking-widest text-[10px] mb-10">
-              Begin The Doctrine
+              Begin The Training
             </p>
 
             {/* Form */}
@@ -188,7 +188,7 @@ export default function EnlistModal({ isOpen, onClose }: EnlistModalProps) {
                 type="submit"
                 className="w-full mt-4 py-4 bg-[var(--color-chrome)] text-black font-sans uppercase tracking-[0.25em] text-sm font-semibold hover:bg-white transition-colors duration-300 cursor-pointer"
               >
-                Transmit Dossier
+                Submit
               </button>
             </form>
           </motion.div>

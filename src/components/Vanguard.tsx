@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
 
@@ -17,27 +17,29 @@ export default function Vanguard() {
     <section id="legacy" className="relative w-full pt-32 pb-48 bg-[var(--color-onyx)] overflow-hidden">
       {/* Background Hover Images */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <AnimatePresence>
-          {hoveredIndex !== null && stats[hoveredIndex].image && (
-            <motion.div
-              key={hoveredIndex}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 0.6, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image 
-                src={stats[hoveredIndex].image!} 
-                alt={stats[hoveredIndex].label} 
-                fill 
-                className="object-cover grayscale mix-blend-lighten" 
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-onyx)] via-transparent to-[var(--color-onyx)] opacity-80" />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {stats.map((stat, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ 
+              opacity: hoveredIndex === i ? 0.6 : 0, 
+              scale: hoveredIndex === i ? 1 : 1.05 
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image 
+              src={stat.image!} 
+              alt={stat.label} 
+              fill 
+              sizes="100vw"
+              quality={75}
+              className="object-cover grayscale mix-blend-lighten" 
+              priority={i === 0}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-onyx)] via-transparent to-[var(--color-onyx)] opacity-80" />
+          </motion.div>
+        ))}
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-24 md:gap-32">

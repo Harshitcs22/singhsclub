@@ -49,7 +49,7 @@ export default function Enlistment() {
             Enlistment
           </h2>
           <p className="font-sans text-[var(--color-silver-dim)] uppercase tracking-widest text-sm">
-            Begin the Doctrine. Submit your Dossier.
+            Begin the Training. Submit your Discipline.
           </p>
         </motion.div>
 
@@ -63,8 +63,8 @@ export default function Enlistment() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="relative group">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="name"
                 required
                 value={form.name}
@@ -72,8 +72,8 @@ export default function Enlistment() {
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
-              <label 
-                htmlFor="name" 
+              <label
+                htmlFor="name"
                 className="absolute left-0 top-4 text-[var(--color-silver-dim)] font-sans uppercase tracking-widest text-xs transition-all duration-300 peer-focus:-top-4 peer-focus:text-[var(--color-chrome)] peer-focus:text-[10px] peer-valid:-top-4 peer-valid:text-[10px]"
               >
                 Full Name
@@ -81,8 +81,8 @@ export default function Enlistment() {
             </div>
 
             <div className="relative group">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="age"
                 required
                 value={form.age}
@@ -90,8 +90,8 @@ export default function Enlistment() {
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
-              <label 
-                htmlFor="age" 
+              <label
+                htmlFor="age"
                 className="absolute left-0 top-4 text-[var(--color-silver-dim)] font-sans uppercase tracking-widest text-xs transition-all duration-300 peer-focus:-top-4 peer-focus:text-[var(--color-chrome)] peer-focus:text-[10px] peer-valid:-top-4 peer-valid:text-[10px]"
               >
                 Age (Kids/Seniors)
@@ -99,8 +99,8 @@ export default function Enlistment() {
             </div>
 
             <div className="relative group">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="discipline"
                 required
                 value={form.discipline}
@@ -108,8 +108,8 @@ export default function Enlistment() {
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
-              <label 
-                htmlFor="discipline" 
+              <label
+                htmlFor="discipline"
                 className="absolute left-0 top-4 text-[var(--color-silver-dim)] font-sans uppercase tracking-widest text-xs transition-all duration-300 peer-focus:-top-4 peer-focus:text-[var(--color-chrome)] peer-focus:text-[10px] peer-valid:-top-4 peer-valid:text-[10px]"
               >
                 Discipline (e.g. 100m, Long Jump)
@@ -117,8 +117,8 @@ export default function Enlistment() {
             </div>
 
             <div className="relative group">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="location"
                 required
                 value={form.location}
@@ -126,8 +126,8 @@ export default function Enlistment() {
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
-              <label 
-                htmlFor="location" 
+              <label
+                htmlFor="location"
                 className="absolute left-0 top-4 text-[var(--color-silver-dim)] font-sans uppercase tracking-widest text-xs transition-all duration-300 peer-focus:-top-4 peer-focus:text-[var(--color-chrome)] peer-focus:text-[10px] peer-valid:-top-4 peer-valid:text-[10px]"
               >
                 Village / City
@@ -136,7 +136,7 @@ export default function Enlistment() {
           </div>
 
           <div className="relative group mt-4">
-            <textarea 
+            <textarea
               id="message"
               rows={1}
               value={form.message}
@@ -144,8 +144,8 @@ export default function Enlistment() {
               className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer resize-none"
               placeholder=" "
             />
-            <label 
-              htmlFor="message" 
+            <label
+              htmlFor="message"
               className="absolute left-0 top-4 text-[var(--color-silver-dim)] font-sans uppercase tracking-widest text-xs transition-all duration-300 peer-focus:-top-4 peer-focus:text-[var(--color-chrome)] peer-focus:text-[10px] peer-valid:-top-4 peer-valid:text-[10px]"
             >
               Support / Queries (Optional)
@@ -153,11 +153,11 @@ export default function Enlistment() {
           </div>
 
           <div className="mt-8 flex justify-end">
-            <button 
+            <button
               type="submit"
               className="w-full md:w-auto px-12 py-5 bg-[var(--color-chrome)] text-black font-sans uppercase tracking-widest text-sm font-semibold hover:bg-white transition-colors duration-300 cursor-pointer"
             >
-              Submit Dossier
+              Submit
             </button>
           </div>
         </motion.form>
