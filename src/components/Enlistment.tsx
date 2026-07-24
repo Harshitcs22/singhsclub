@@ -1,8 +1,40 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState, FormEvent } from 'react'
+
+const WHATSAPP_NUMBER = '919463449242'
 
 export default function Enlistment() {
+  const [form, setForm] = useState({
+    name: '',
+    age: '',
+    discipline: '',
+    location: '',
+    message: '',
+  })
+
+  const handleChange = (field: string, value: string) => {
+    setForm(prev => ({ ...prev, [field]: value }))
+  }
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault()
+
+    const text = `⚡ *NEW ATHLETE ENLISTMENT* ⚡
+*Name:* ${form.name}
+*Age:* ${form.age}
+*Discipline:* ${form.discipline}
+*Location:* ${form.location}
+*Message:* ${form.message}`
+
+    const encoded = encodeURIComponent(text)
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank')
+
+    // Reset form after submission
+    setForm({ name: '', age: '', discipline: '', location: '', message: '' })
+  }
+
   return (
     <section className="relative w-full py-32 bg-[var(--color-onyx)]">
       <div className="container mx-auto px-6 md:px-12 max-w-4xl">
@@ -27,7 +59,7 @@ export default function Enlistment() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 1, delay: 0.2 }}
           className="flex flex-col gap-12"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="relative group">
@@ -35,6 +67,8 @@ export default function Enlistment() {
                 type="text" 
                 id="name"
                 required
+                value={form.name}
+                onChange={(e) => handleChange('name', e.target.value)}
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
@@ -51,6 +85,8 @@ export default function Enlistment() {
                 type="text" 
                 id="age"
                 required
+                value={form.age}
+                onChange={(e) => handleChange('age', e.target.value)}
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
@@ -67,6 +103,8 @@ export default function Enlistment() {
                 type="text" 
                 id="discipline"
                 required
+                value={form.discipline}
+                onChange={(e) => handleChange('discipline', e.target.value)}
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
@@ -83,6 +121,8 @@ export default function Enlistment() {
                 type="text" 
                 id="location"
                 required
+                value={form.location}
+                onChange={(e) => handleChange('location', e.target.value)}
                 className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer"
                 placeholder=" "
               />
@@ -99,6 +139,8 @@ export default function Enlistment() {
             <textarea 
               id="message"
               rows={1}
+              value={form.message}
+              onChange={(e) => handleChange('message', e.target.value)}
               className="w-full bg-transparent border-b border-[var(--color-silver-dim)]/40 py-4 text-[var(--color-silver)] font-sans tracking-wide focus:outline-none focus:border-[var(--color-chrome)] focus:shadow-[0_1px_10px_rgba(192,192,192,0.2)] transition-all duration-300 peer resize-none"
               placeholder=" "
             />
@@ -113,7 +155,7 @@ export default function Enlistment() {
           <div className="mt-8 flex justify-end">
             <button 
               type="submit"
-              className="w-full md:w-auto px-12 py-5 bg-[var(--color-chrome)] text-black font-sans uppercase tracking-widest text-sm font-semibold hover:bg-white transition-colors duration-300"
+              className="w-full md:w-auto px-12 py-5 bg-[var(--color-chrome)] text-black font-sans uppercase tracking-widest text-sm font-semibold hover:bg-white transition-colors duration-300 cursor-pointer"
             >
               Submit Dossier
             </button>
