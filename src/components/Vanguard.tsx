@@ -46,9 +46,11 @@ export default function Vanguard() {
             key={i}
             className="group flex flex-col items-center justify-center cursor-default"
             onHoverStart={() => setHoveredIndex(i)}
+            onClick={() => setHoveredIndex(i)}
+            onViewportEnter={() => setHoveredIndex(i)}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ amount: 0.5, margin: "0px 0px -20% 0px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
           >
             <h2 className="font-sans font-bold text-7xl md:text-9xl lg:text-[10rem] text-[var(--color-silver)] tracking-tighter transition-all duration-500 group-hover:text-white group-hover:scale-105 drop-shadow-[0_0_15px_rgba(224,224,224,0)] group-hover:drop-shadow-[0_0_30px_rgba(224,224,224,0.4)]">
