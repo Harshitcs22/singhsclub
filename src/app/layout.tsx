@@ -3,6 +3,7 @@ import { Bodoni_Moda, Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 const playfair = Bodoni_Moda({
   variable: "--font-playfair",
@@ -68,6 +69,7 @@ export default function RootLayout({
             {children}
           </main>
         </LenisProvider>
+        <Analytics />
       </body>
     </html>
   );
